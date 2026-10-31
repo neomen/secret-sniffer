@@ -1,0 +1,37 @@
+{
+  "name": "secret-sniffer",
+  "version": "0.1.0",
+  "description": "Zero-config secret detection and sanitization for LLM applications and AI agents",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/secret-sniffer.cjs",
+  "module": "./dist/secret-sniffer.mjs",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/secret-sniffer.mjs",
+      "require": "./dist/secret-sniffer.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "types",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "node --test",
+    "prepack": "npm test && npm run build"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true
+  }
+}
